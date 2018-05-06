@@ -189,7 +189,6 @@ commit-*
 *.orig
 
 # Debian stuff
-/debian
 /pkg/dpkg/files
 /pkg/dpkg/tmp/
 /pkg/dpkg/warzone2100-data.debhelper.log
