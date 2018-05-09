@@ -9,6 +9,7 @@ Build-Depends:
  asciidoc,
  automake1.11,
  bison,
+ cmake,
  debhelper (>= 9),
  docbook-xml,
  docbook-xsl,
