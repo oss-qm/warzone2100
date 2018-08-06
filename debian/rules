@@ -45,7 +45,7 @@ override_dh_auto_configure:
 		--enable-debug=no
 
 override_dh_auto_build:
-	make -C lib/framework strres_parser.h
+#	make -C lib/framework strres_parser.h
 	make -C lib/gamelib audp_parser.h
 	make -C lib/script chat_parser.h
 	make -C lib/script script_parser.h
