@@ -11,12 +11,7 @@ override_dh_autoreconf:
 	dh_autoreconf ./autogen.sh
 
 override_dh_auto_configure:
-	# Remove embedded code copies so we never use them
-	rm -rf 3rdparty/miniupnpc
-	rm -rf 3rdparty/SDL
-	rm -rf 3rdparty/quesoglc
 	# Remove generated files so we regenerate them
-	rm -f doc/warzone2100.6
 	dh_auto_configure -- \
 		--bindir=\$${prefix}/games \
 		--datadir=\$${prefix}/share/games \
@@ -42,4 +37,3 @@ override_dh_compress:
 
 override_dh_auto_test:
 	# Do nothing here at the moment to work around a FTBFS
-
