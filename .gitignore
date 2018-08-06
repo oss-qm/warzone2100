@@ -220,6 +220,8 @@ commit-*
 *.orig
 
 # Debian stuff
+/debian/autoreconf.after
+/debian/autoreconf.before
 /pkg/dpkg/files
 /pkg/dpkg/tmp/
 /pkg/dpkg/warzone2100-data.debhelper.log
