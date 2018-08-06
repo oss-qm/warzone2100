@@ -16,25 +16,7 @@ override_dh_auto_configure:
 	rm -rf 3rdparty/SDL
 	rm -rf 3rdparty/quesoglc
 	# Remove generated files so we regenerate them
-	rm -f doc/warzone2100.6 \
-	src/scriptvals_lexer.cpp \
-	src/scriptvals_parser.cpp \
-	src/scriptvals_parser.h \
-	src/level_lexer.cpp \
-	lib/framework/resource_lexer.cpp \
-	lib/framework/resource_parser.cpp \
-	lib/framework/resource_parser.h \
-	lib/script/script_lexer.cpp \
-	lib/script/script_parser.cpp \
-	lib/script/script_parser.h \
-	lib/script/chat_lexer.cpp \
-	lib/script/chat_parser.cpp \
-	lib/script/chat_parser.h \
-	lib/gamelib/audp_lexer.cpp \
-	lib/gamelib/audp_parser.cpp \
-	lib/gamelib/audp_parser.h \
-	lib/framework/strres_lexer.cpp \
-	lib/framework/strres_parser.cpp \
+	rm -f doc/warzone2100.6
 	dh_auto_configure -- \
 		--bindir=\$${prefix}/games \
 		--datadir=\$${prefix}/share/games \
@@ -51,12 +33,12 @@ override_dh_auto_build:
 #	make -C lib/script script_parser.h
 #	make -C lib/framework resource_parser.h
 #	make -C src scriptvals_parser.h
-	# The HTML to PDF converter needs an X server
-	# The default bit depth is too low for the images in the PDF
+#	# The HTML to PDF converter needs an X server
+#	# The default bit depth is too low for the images in the PDF
 	dh_auto_build
-	# xvfb-run --auto-servernum --server-args="-screen 0 1024x768x24" dh_auto_build
+#	# xvfb-run --auto-servernum --server-args="-screen 0 1024x768x24" dh_auto_build
 	icotool -x icons/warzone2100.ico
-	rm -f warzone2100_*_*x*x*.png
+#	rm -f warzone2100_*_*x*x*.png
 
 override_dh_auto_install:
 	dh_auto_install
